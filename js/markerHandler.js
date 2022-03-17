@@ -91,7 +91,7 @@ AFRAME.registerComponent("markerhandler", {
       var ratingButton = document.getElementById("rating-button");
       var orderButtton = document.getElementById("order-button");
       var orderSummaryButtton = document.getElementById("order-summary-button");
-
+//PAY BUTTON CREATED
       var payButton = document.getElementById("pay-button");
 
       // Handling Click Events
@@ -120,7 +120,7 @@ AFRAME.registerComponent("markerhandler", {
       orderSummaryButtton.addEventListener("click", () =>
         this.handleOrderSummary()
       );
-
+//PAY BUTTON CLICK EVENT
       payButton.addEventListener("click", () => this.handlePayment());
     }
   },
@@ -246,27 +246,25 @@ AFRAME.registerComponent("markerhandler", {
     var td2 = document.createElement("td");
     td1.setAttribute("class", "no-line");
 
+    //ADD CODE
     //Create a cell for TOTAL
-    var td3 = document.createElement("td");
-    td1.setAttribute("class", "no-line text-center");
+   
 
-    //Create <strong> element to emphasize the text
-    var strongTag = document.createElement("strong");
-    strongTag.innerHTML = "Total";
-
-    td3.appendChild(strongTag);
-
+    
     //Create cell to show total bill amount
-    var td4 = document.createElement("td");
-    td1.setAttribute("class", "no-line text-right");
-    td4.innerHTML = "$" + orderSummary.total_bill;
-
+    
+    
+    
+    
     //Append cells to the row
     totalTr.appendChild(td1);
     totalTr.appendChild(td2);
-    totalTr.appendChild(td3);
-    totalTr.appendChild(td4);
-
+    //add td3 and td4 to the row
+    //ADD CODE
+    
+    
+    
+    
     //Append the row to the table
     tableBodyTag.appendChild(totalTr);
   },
@@ -279,23 +277,12 @@ AFRAME.registerComponent("markerhandler", {
     tableNumber <= 9 ? (tNumber = `T0${tableNumber}`) : `T${tableNumber}`;
 
     //Reseting current orders and total bill
-    firebase
-      .firestore()
-      .collection("tables")
-      .doc(tNumber)
-      .update({
-        current_orders: {},
-        total_bill: 0
-      })
-      .then(() => {
-        swal({
-          icon: "success",
-          title: "Thanks For Paying !",
-          text: "We Hope You Enjoyed Your Food !!",
-          timer: 2500,
-          buttons: false
-        });
-      });
+    //ADD CODE
+    
+    
+    
+    
+    
   },
   handleMarkerLost: function () {
     // Changing button div visibility
